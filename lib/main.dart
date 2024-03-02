@@ -124,7 +124,13 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
   Widget _buildNumberButton(String number) {
     return ElevatedButton(
       onPressed: () => _onNumberPressed(number),
-      child: Text(number),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.blue,
+      ),
+      child: Text(
+        number,
+        style: const TextStyle(color: Colors.black), // Text color style here
+      ),
     );
   }
 
@@ -138,7 +144,13 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
         }
         _onOperationPressed(command);
       },
-      child: Text(symbol),
+    style: ElevatedButton.styleFrom(
+      backgroundColor: Colors.orange,
+    ),
+      child: Text(
+        symbol,
+        style: const TextStyle(color: Colors.black)
+        ,),
     );
   }
 
@@ -153,7 +165,12 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
           }
         });
       },
-      child: Text('Enter'),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.green, // Change the background color to green
+      ),
+      child: const Text(
+        'Enter',
+        style:  TextStyle(color: Colors.black),),
     );
   }
 
@@ -166,7 +183,13 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
           stackItems.clear();
         });
       },
-      child: Text('C'),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Colors.red, // Change the background color to green
+      ),
+      child: const Text(
+          'C',
+        style: TextStyle(color: Colors.black),
+      ),
     );
   }
 }
