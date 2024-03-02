@@ -123,13 +123,14 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
 
   Widget _buildNumberButton(String number) {
     return ElevatedButton(
+      key: Key('number_button_$number'),
       onPressed: () => _onNumberPressed(number),
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.blue,
       ),
       child: Text(
         number,
-        style: const TextStyle(color: Colors.black), // Text color style here
+        style: const TextStyle(color: Colors.black),
       ),
     );
   }
@@ -156,6 +157,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
 
   Widget _buildEnterButton() {
     return ElevatedButton(
+      key: const ValueKey('enter_button'),
       onPressed: () {
         setState(() {
           if (display.isNotEmpty) {
@@ -166,7 +168,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
         });
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.green, // Change the background color to green
+        backgroundColor: Colors.green,
       ),
       child: const Text(
         'Enter',
@@ -176,6 +178,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
 
   Widget _buildClearButton() {
     return ElevatedButton(
+      key: const ValueKey('clear_button'),
       onPressed: () {
         setState(() {
           display = '';
@@ -184,7 +187,7 @@ class _CalculatorHomePageState extends State<CalculatorHomePage> {
         });
       },
       style: ElevatedButton.styleFrom(
-        backgroundColor: Colors.red, // Change the background color to green
+        backgroundColor: Colors.red,
       ),
       child: const Text(
           'C',
